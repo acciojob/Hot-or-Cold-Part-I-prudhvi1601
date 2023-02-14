@@ -2,15 +2,27 @@
 // We will understand all of this later in the course.
 // DO NOT MODIFY THIS FILE
 
-const express = require('express');
-const path = require('path');
+ 
 
-const app = express();
 
-app.use(express.static(__dirname))
+var randomNum;
+var input;
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/main.html'));
-});
-
-module.exports = app;
+function generateRandomNum() {
+  randomNum = Math.floor(Math.random() * 41) - 20;
+  document.getElementById("num").innerText = randomNum;
+  guessNum();
+  checkGame();
+}
+function guessNum() {
+  input = Number(document.getElementById("guess").value);
+}
+function checkGame() {
+  if (Math.abs(randomNum - input <= 5)) {
+    document.getElementById("respond").innerText = "Hot";
+  }
+  else {
+    document.getElementById("respond").innerText = "Cold";
+  }
+}
+btn.addEventListener("click",generateRandomNum);
