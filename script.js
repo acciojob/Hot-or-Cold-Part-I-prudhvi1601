@@ -1,7 +1,9 @@
 //your code here
 
-var randomNum;
-var input;
+var btn = documnet.getElementById("btn");
+var numPtag = documnet.getElementById("num");
+var res = documnet.getElementById("respond");
+var inputValue = documnet.getElementById("guess").value;
 
 function generateRandomNum() {
   randomNum = Math.floor(Math.random() * 41) - 20;
@@ -20,4 +22,4 @@ function checkGame() {
     document.getElementById("respond").innerText = "Cold";
   }
 }
-btn.addEventListener("click",generateRandomNum);
+btn.addEventListener("click", generateRandomNum);
