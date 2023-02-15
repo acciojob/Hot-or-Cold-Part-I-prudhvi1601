@@ -1,5 +1,3 @@
-//your code here
-
 var btn = documnet.getElementById("btn");
 var numPtag = documnet.getElementById("num");
 var res = documnet.getElementById("respond");
